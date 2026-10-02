@@ -27,3 +27,7 @@
 /* Start stars remain distinct until covered; covered player start becomes green tile */
 .start-0{background:linear-gradient(145deg,#fffaf0,#ead9bd)!important}
 .start-1{background:linear-gradient(145deg,#fffaf0,#ead9bd)!important}
+
+/* Crisp bonus stars: sharp edges, no glow or shadow */
+.star{box-shadow:none!important}
+.star:empty:after{color:#ffd21a!important;text-shadow:none!important;filter:none!important;-webkit-text-stroke:1px #c88600}
