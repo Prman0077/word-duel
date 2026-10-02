@@ -15,3 +15,13 @@
 .start-0:empty:after{color:#efffd7!important;text-shadow:0 0 5px #fff,0 0 11px #29e55a!important}
 .start-1{background:radial-gradient(circle,#ffdca0 0 12%,#ff9b28 35%,#e44d1b 70%,#98250d 100%)!important;border-color:#ffd29b!important;box-shadow:inset 0 0 12px #ffe2ad,0 0 12px #ff682d!important}
 .start-1:empty:after{color:#fff4d9!important;text-shadow:0 0 5px #fff,0 0 11px #ff6b27!important}
+
+/* Clean gold bonus stars with the normal ivory square behind them */
+.star{background:linear-gradient(145deg,#fffaf0,#ead9bd)!important;border-color:#c5ad86!important;box-shadow:inset 0 2px 3px #fff,inset 0 -2px 4px #c2ad8b!important;animation:none!important}
+.star:empty:after{content:'★';color:#ffc400!important;font-size:1.45em;text-shadow:0 0 3px #fff6a8,0 0 8px #ffb000,0 1px 1px #9b5b00!important}
+.start-0{background:linear-gradient(145deg,#fffaf0,#ead9bd)!important;border-color:#57e86c!important;box-shadow:inset 0 0 0 3px #5bea70,0 0 10px #43ed63!important}
+.start-0:empty:after{color:#39d957!important;text-shadow:0 0 4px #caffcf,0 0 10px #20d948!important}
+.start-1{background:linear-gradient(145deg,#fffaf0,#ead9bd)!important;border-color:#ff8a3d!important;box-shadow:inset 0 0 0 3px #ff8a3d,0 0 10px #ff692e!important}
+.start-1:empty:after{color:#ff7a27!important;text-shadow:0 0 4px #ffe0bd,0 0 10px #ff6724!important}
+.danger{background:linear-gradient(#ff4964,#d91032)!important;color:#fff!important;box-shadow:0 3px 0 #85071d,0 0 12px #ff365888!important}
+#rack{min-height:66px;border-radius:10px}
