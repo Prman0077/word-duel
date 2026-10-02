@@ -8,3 +8,10 @@
 .start:empty:after{font-size:.72em;font-weight:1000;letter-spacing:.04em;text-shadow:0 1px 2px #0008}
 .start-0{background:linear-gradient(145deg,#8de5ff,#2385dc)!important;border-color:#bfefff!important}.start-0:empty:after{content:'P1 START';color:#08234a}
 .start-1{background:linear-gradient(145deg,#ffc16a,#e86c22)!important;border-color:#ffdcad!important}.start-1:empty:after{content:'P2 START';color:#3b1607}
+
+/* Player-facing start stars: P1 bottom-left, opponent top-right */
+.start:empty:after{content:'★'!important;font-size:1.25em!important;letter-spacing:0!important}
+.start-0{background:radial-gradient(circle,#d8ff9a 0 12%,#62db46 35%,#15963a 70%,#086329 100%)!important;border-color:#aaff88!important;box-shadow:inset 0 0 12px #d8ff9a,0 0 12px #48ef69!important}
+.start-0:empty:after{color:#efffd7!important;text-shadow:0 0 5px #fff,0 0 11px #29e55a!important}
+.start-1{background:radial-gradient(circle,#ffdca0 0 12%,#ff9b28 35%,#e44d1b 70%,#98250d 100%)!important;border-color:#ffd29b!important;box-shadow:inset 0 0 12px #ffe2ad,0 0 12px #ff682d!important}
+.start-1:empty:after{color:#fff4d9!important;text-shadow:0 0 5px #fff,0 0 11px #ff6b27!important}
