@@ -31,3 +31,6 @@
 /* Crisp bonus stars: sharp edges, no glow or shadow */
 .star{box-shadow:none!important}
 .star:empty:after{color:#ffd21a!important;text-shadow:none!important;filter:none!important;-webkit-text-stroke:1px #c88600}
+
+/* Bonus point breakdown boxes */
+.bonus-card{background:linear-gradient(145deg,#0c2557,#071534);border:2px solid #ffd34d;border-radius:14px;padding:10px 12px;text-align:center;box-shadow:0 0 12px #ffcc3355;margin-bottom:16px}.bonus-card>span{display:block;color:#ffd85a;font-size:13px;font-weight:900;letter-spacing:.12em;margin-bottom:6px}.bonus-card div{display:flex;justify-content:space-between;gap:8px;color:#dcecff;font-size:13px;line-height:1.7}.bonus-card div strong{color:#fff;font-size:15px}
