@@ -32,7 +32,7 @@ WAIT WALK WANT WAR WAS WATCH WATER WAY WE WEEK WELL WENT WERE WHAT WHEN WHERE WH
 YEAR YES YET YOU YOUNG YOUR
 `.trim().split(/\s+/).map(w=>w.toUpperCase()).filter(w=>w.length>=2&&w.length<=7&&WORDS.has(w));
 const AI_WORDS=EASY_COMMON;
-const SIZE=11, STARTS=['0,0','10,10'], STARS=new Set(['1,1','1,9','3,5','5,3','5,7','7,5','9,1','9,9']);
+const SIZE=11, STARTS=['10,0','0,10'], STARS=new Set(['1,1','1,9','3,5','5,3','5,7','7,5','9,1','9,9']);
 const FREQ='EEEEEEEEEEEEAAAAAAAAAIIIIIIIIOOOOOOOONNNNNNRRRRRRTTTTTTLLLLSSSSUUUUDDDDGGGBBCCMMPPFFHHVVWWYYKJXQZ?';
 const rooms=new Map();
 function code(){let s='';do{s=Math.random().toString(36).slice(2,7).toUpperCase()}while(rooms.has(s));return s}
