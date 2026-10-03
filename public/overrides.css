@@ -34,3 +34,12 @@
 
 /* Bonus point breakdown boxes */
 .bonus-card{background:linear-gradient(145deg,#0c2557,#071534);border:2px solid #ffd34d;border-radius:14px;padding:10px 12px;text-align:center;box-shadow:0 0 12px #ffcc3355;margin-bottom:16px}.bonus-card>span{display:block;color:#ffd85a;font-size:13px;font-weight:900;letter-spacing:.12em;margin-bottom:6px}.bonus-card div{display:flex;justify-content:space-between;gap:8px;color:#dcecff;font-size:13px;line-height:1.7}.bonus-card div strong{color:#fff;font-size:15px}
+
+/* Layout refinements: blank tile alignment, larger timers, top goal */
+#rack .tile:empty{vertical-align:top}
+.timer-card{min-height:82px;display:grid;place-items:center;font-size:24px;font-weight:1000;padding:18px 12px;transition:background .15s,border-color .15s,box-shadow .15s,color .15s}
+.timer-card.timer-active{border-color:#35a6ff}
+.timer-card.countdown-danger{background:linear-gradient(145deg,#8f1326,#3e0711)!important;border-color:#ff425d!important;color:#fff!important;box-shadow:0 0 20px #ff244d99!important;text-shadow:0 0 8px #ff8a9b}
+.top-goal{width:220px;margin:-7px auto 12px;background:linear-gradient(145deg,#0c2557,#071534);border:3px solid #ffd34d;border-radius:14px;padding:8px 14px;text-align:center;box-shadow:0 0 14px #ffcc3355}
+.top-goal span{display:block;color:#ffd85a;font-size:12px;font-weight:900;letter-spacing:.15em}
+.top-goal strong{display:block;color:#fff;font-size:27px;line-height:1.05}
