@@ -50,7 +50,7 @@ function coversStart(keys,p){return keys.includes(STARTS[p])}
 function makesFirstConnection(g,keys,p){if(g.connected)return false;let other=1-p;return keys.some(k=>adjacentKeys(k).some(n=>g.owners?.[n]===other))}
 function networkLegal(g,keys,p){if(g.connected)return keys.some(k=>adjacentKeys(k).some(n=>g.board[n]));if(!hasOwned(g,p))return coversStart(keys,p);return touchesOwner(g,keys,p)}
 function placementText(placements){if(!placements||!placements.length)return '';let ps=[...placements].sort((a,b)=>a.r-b.r||a.c-b.c);return ps.map(p=>`${p.letter}@R${p.r+1}C${p.c+1}`).join(', ')}
-function scheduleComputer(g){if(g.mode==='computer'&&g.turn===1&&!g.winner)setTimeout(()=>computerTurn(g),650)}
+function scheduleComputer(g){if(g.mode==='computer'&&g.turn===1&&!g.winner)setTimeout(()=>computerTurn(g),10000)}
 function advance(g){g.turn=1-g.turn;resetDeadline(g);g.status=`${g.players[g.turn]?.name||'Player'}'s turn.`;emit(g);scheduleComputer(g)}
 function canUseWord(g,word,r,c,dr,dc){let rack=[...g.racks[1]],pending={},placements=[],touches=false,newCount=0;for(let i=0;i<word.length;i++){let rr=r+dr*i,cc=c+dc*i,k=`${rr},${cc}`,ch=word[i];if(rr<0||cc<0||rr>=SIZE||cc>=SIZE)return null;if(g.board[k]){if(g.board[k]!==ch)return null;touches=true}else{let idx=rack.indexOf(ch),tile=ch;if(idx<0){idx=rack.indexOf('?');tile='?'}if(idx<0)return null;rack.splice(idx,1);pending[k]=ch;placements.push({r:rr,c:cc,tile,letter:ch});newCount++}}
  if(!newCount)return null;
