@@ -51,3 +51,15 @@
 .top-info span{display:block;color:#ffd85a;font-size:12px;font-weight:900;letter-spacing:.15em}
 .top-info .top-mode span{color:#8feaff}
 .top-info strong{display:block;color:#fff;font-size:27px;line-height:1.05}
+
+/* Rules access and modal */
+.top-info .rules-button{width:180px;margin:0;border:3px solid #7be66c;background:linear-gradient(145deg,#153f31,#0a281f);color:#fff;border-radius:14px;padding:8px 14px;font-size:18px;letter-spacing:.08em;box-shadow:0 0 14px #54e86b55}
+.lobby-rules{display:block;width:calc(100% - 10px);margin:0 5px 14px;background:linear-gradient(#ffe17b,#ff9f18);font-size:17px}
+.rules-modal{position:fixed;inset:0;z-index:1000;background:#020b1dcc;display:grid;place-items:center;padding:20px}
+.rules-modal[hidden]{display:none}
+.rules-dialog{position:relative;width:min(680px,94vw);max-height:88vh;overflow:auto;background:linear-gradient(145deg,#10366f,#071a3e);border:3px solid #ffd34d;border-radius:18px;padding:24px 28px;color:#eaf5ff;box-shadow:0 0 30px #000b,0 0 20px #ffcc3355}
+.rules-dialog h2{text-align:center;color:#ffd85a;margin:0 35px 18px}
+.rules-dialog h3{color:#70dcff;margin:18px 0 4px;font-size:14px;letter-spacing:.12em}
+.rules-dialog p{margin:0;line-height:1.5}
+.rules-close{position:absolute;right:10px;top:8px;width:42px;height:42px;margin:0;padding:0;font-size:30px;line-height:1;background:linear-gradient(#ff4964,#d91032);color:#fff}
+@media(max-width:820px){.top-info{flex-wrap:wrap}.top-info .top-goal,.top-info .top-mode,.top-info .rules-button{width:145px}}
