@@ -1,6 +1,16 @@
 const express=require('express'),http=require('http'),{Server}=require('socket.io'),fs=require('fs'),path=require('path');
 const app=express(),server=http.createServer(app),io=new Server(server);
 app.get('/health',(req,res)=>res.status(200).json({ok:true,service:'word-duel-online'}));
+app.get('/word-duel-victory-fanfare.wav',(req,res)=>{
+ const sr=44100,duration=2.6,n=Math.floor(sr*duration),audio=new Float64Array(n);
+ const notes=[[0,.18,523.25,.28],[.18,.18,659.25,.28],[.36,.18,783.99,.30],[.54,.24,1046.5,.34],[.86,.16,783.99,.25],[1.02,.16,987.77,.28],[1.18,.20,1174.66,.30],[1.38,.65,1318.51,.30],...[523.25,659.25,783.99,1046.5].map(f=>[1.55,.90,f,.16])];
+ function tone(start,dur,freq,amp){let a=Math.floor(start*sr),b=Math.min(n,Math.floor((start+dur)*sr));for(let i=a;i<b;i++){let j=i-a,rem=b-i,env=Math.min(1,j/(.012*sr),rem/(.10*sr)),t=i/sr;audio[i]+=amp*env*(Math.sin(2*Math.PI*freq*t)+.28*Math.sin(4*Math.PI*freq*t)+.12*Math.sin(6*Math.PI*freq*t))}}
+ notes.forEach(x=>tone(...x));[[2.05,1567.98],[2.16,2093],[2.27,2637.02]].forEach(([st,hz])=>tone(st,.12,hz,.12));
+ let peak=0;for(let i=0;i<n;i++)peak=Math.max(peak,Math.abs(audio[i]));let scale=.88/(peak||1),data=Buffer.alloc(n*2),header=Buffer.alloc(44);
+ header.write('RIFF',0);header.writeUInt32LE(36+data.length,4);header.write('WAVE',8);header.write('fmt ',12);header.writeUInt32LE(16,16);header.writeUInt16LE(1,20);header.writeUInt16LE(1,22);header.writeUInt32LE(sr,24);header.writeUInt32LE(sr*2,28);header.writeUInt16LE(2,32);header.writeUInt16LE(16,34);header.write('data',36);header.writeUInt32LE(data.length,40);
+ for(let i=0;i<n;i++){let v=Math.max(-1,Math.min(1,audio[i]*scale));data.writeInt16LE(Math.trunc(v*32767),i*2)}
+ res.type('audio/wav').set('Cache-Control','public, max-age=31536000, immutable').send(Buffer.concat([header,data]));
+});
 app.use(express.static(path.join(__dirname,'public')));
 const WORD_LIST=fs.readFileSync(path.join(__dirname,'english_words.txt'),'utf8').split(/\r?\n/).map(x=>x.trim().toUpperCase()).filter(x=>/^[A-Z]{2,}$/.test(x));
 const WORDS=new Set(WORD_LIST);
