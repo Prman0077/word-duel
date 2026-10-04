@@ -67,7 +67,7 @@ function scheduleComputer(g){if(g.mode==='computer'&&g.turn===1&&!g.winner)setTi
 function advance(g,statusOverride){g.turn=1-g.turn;resetDeadline(g);g.status=statusOverride||`${g.players[g.turn]?.name||'Player'}'s turn.`;emit(g);scheduleComputer(g)}
 function finishIfTilesExhausted(g,p){
  if(g.bag.length||g.racks[p].length)return false;
- let other=1-p,penalty=g.racks[other].reduce((sum,t)=>sum+(TILE_VALUES[t]||0),0);
+ let other=1-p,penalty=10*g.racks[other].length;
  g.scores[other]=Math.max(0,g.scores[other]-penalty);
  if(g.scores[p]>g.scores[other])g.winner=p;
  else if(g.scores[other]>g.scores[p])g.winner=other;
@@ -75,7 +75,7 @@ function finishIfTilesExhausted(g,p){
  g.deadline=null;
  let winnerName=g.players[g.winner]?.name||'Player';
  let loserName=g.players[other]?.name||'Opponent';
- g.status=`No tiles remain. ${loserName} loses ${penalty} point${penalty===1?'':'s'} for the standard value of ${g.racks[other].length} remaining rack tile${g.racks[other].length===1?'':'s'}. ${winnerName} Wins!`;
+ g.status=`No tiles remain. ${loserName} loses ${penalty} points (${g.racks[other].length} remaining rack tile${g.racks[other].length===1?'':'s'} × 10). ${winnerName} Wins!`;
  offerReplay(g);
  return true
 }
