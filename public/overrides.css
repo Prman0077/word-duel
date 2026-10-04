@@ -90,3 +90,7 @@
 .prman-footer .footer-presented{display:block;margin:5px 0 1px;color:#d9ecff;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .prman-footer .footer-prman{display:block;margin:0;color:#63d7ff;font-size:15px;font-weight:1000;letter-spacing:.11em;text-shadow:0 0 7px #168cff}
 .prman-footer .footer-prman em{font-style:normal;color:#ffd34d;text-shadow:0 0 7px #ff9d00}
+
+/* Exact PRMAN Productions footer artwork */
+.prman-footer{width:min(900px,96%);margin:24px auto 12px;padding:0;background:none;border:0;box-shadow:none;opacity:1;text-align:center}
+.prman-footer img{display:block;width:100%;height:auto;margin:0 auto;object-fit:contain}
