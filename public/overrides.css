@@ -94,3 +94,8 @@
 /* Exact PRMAN Productions footer artwork */
 .prman-footer{width:min(900px,96%);margin:24px auto 12px;padding:0;background:none;border:0;box-shadow:none;opacity:1;text-align:center}
 .prman-footer img{display:block;width:100%;height:auto;margin:0 auto;object-fit:contain}
+
+/* PRMAN artwork is now the primary logo */
+.brand-art{width:min(640px,88vw);margin:10px auto 12px;padding:0;text-align:center}
+.brand-art img{display:block;width:100%;height:auto;margin:0 auto;object-fit:contain}
+@media(max-width:820px){.brand-art{width:min(520px,94vw)}}
