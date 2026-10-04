@@ -43,7 +43,7 @@ YEAR YES YET YOU YOUNG YOUR
 `.trim().split(/\s+/).map(w=>w.toUpperCase()).filter(w=>w.length>=2&&w.length<=7&&WORDS.has(w));
 const AI_WORDS=EASY_COMMON;
 const SIZE=11, STARTS=['10,0','0,10'], STARS=new Set(['1,1','1,9','3,5','5,3','5,7','7,5','9,1','9,9']);
-const FREQ='EEEEEEEEEEEEAAAAAAAAAIIIIIIIIOOOOOOOONNNNNNRRRRRRTTTTTTLLLLSSSSUUUUDDDDGGGBBCCMMPPFFHHVVWWYYKJXQZ?';
+const FREQ='EEEEEEEEEEEEAAAAAAAAAIIIIIIIIOOOOOOOONNNNNNRRRRRRTTTTTTLLLLSSSSUUUUDDDDGGGBBCCMMPPFFHHVVWWYYKJXQZ?';const TILE_VALUES={A:1,B:3,C:3,D:2,E:1,F:4,G:2,H:4,I:1,J:8,K:5,L:1,M:3,N:1,O:1,P:3,Q:10,R:1,S:1,T:1,U:1,V:4,W:4,X:8,Y:4,Z:10,'?':0};
 const rooms=new Map();
 function code(){let s='';do{s=Math.random().toString(36).slice(2,7).toUpperCase()}while(rooms.has(s));return s}
 function bag(){return FREQ.repeat(3).split('').sort(()=>Math.random()-.5)}
@@ -67,7 +67,7 @@ function scheduleComputer(g){if(g.mode==='computer'&&g.turn===1&&!g.winner)setTi
 function advance(g,statusOverride){g.turn=1-g.turn;resetDeadline(g);g.status=statusOverride||`${g.players[g.turn]?.name||'Player'}'s turn.`;emit(g);scheduleComputer(g)}
 function finishIfTilesExhausted(g,p){
  if(g.bag.length||g.racks[p].length)return false;
- let other=1-p,penalty=10*g.racks[other].length;
+ let other=1-p,penalty=g.racks[other].reduce((sum,t)=>sum+(TILE_VALUES[t]||0),0);
  g.scores[other]=Math.max(0,g.scores[other]-penalty);
  if(g.scores[p]>g.scores[other])g.winner=p;
  else if(g.scores[other]>g.scores[p])g.winner=other;
@@ -75,7 +75,7 @@ function finishIfTilesExhausted(g,p){
  g.deadline=null;
  let winnerName=g.players[g.winner]?.name||'Player';
  let loserName=g.players[other]?.name||'Opponent';
- g.status=`No tiles remain. ${loserName} loses ${penalty} point${penalty===1?'':'s'} for ${g.racks[other].length} rack tile${g.racks[other].length===1?'':'s'}. ${winnerName} Wins!`;
+ g.status=`No tiles remain. ${loserName} loses ${penalty} point${penalty===1?'':'s'} for the standard value of ${g.racks[other].length} remaining rack tile${g.racks[other].length===1?'':'s'}. ${winnerName} Wins!`;
  offerReplay(g);
  return true
 }
