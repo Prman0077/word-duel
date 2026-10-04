@@ -76,3 +76,7 @@
 
 /* Arcade PRMAN Productions footer */
 .prman-footer{text-align:center;margin:22px auto 12px;padding:12px 18px;color:#ffd85a;letter-spacing:.09em;opacity:.96}.prman-footer strong{display:block;font-size:17px;font-weight:1000;text-shadow:0 0 8px #ffbd2e88}.prman-footer span{display:block;margin-top:3px;color:#8feaff;font-size:11px;font-weight:800;letter-spacing:.08em}
+
+/* Center player tile rack inside its rack panel */
+.rack-panel{text-align:center}
+#rack{display:flex;justify-content:center;align-items:center;gap:8px;margin-left:auto;margin-right:auto}
