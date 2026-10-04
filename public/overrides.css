@@ -106,3 +106,7 @@
 #gameTopInfo{position:relative;z-index:2;margin-top:0!important;margin-bottom:14px!important}
 #lobby{position:relative;z-index:2;margin-top:0!important}
 @media(max-width:820px){.brand-art{width:min(430px,88vw)!important;margin-bottom:18px!important}}
+
+/* Small visual gap below primary logo on lobby and game screens */
+.brand-art{margin-bottom:30px!important}
+@media(max-width:820px){.brand-art{margin-bottom:26px!important}}
