@@ -80,3 +80,13 @@
 /* Center player tile rack inside its rack panel */
 .rack-panel{text-align:center}
 #rack{display:flex;justify-content:center;align-items:center;gap:8px;margin-left:auto;margin-right:auto}
+
+/* Glossy arcade footer: gold/blue Word Duel, red stars, colorful PRMAN Productions */
+.prman-footer{width:min(760px,94%);text-align:center;margin:24px auto 12px;padding:14px 18px 12px;border-top:2px solid #ffd34d;border-bottom:2px solid #147cff;background:linear-gradient(90deg,transparent,#061a3dcc 18%,#0b2d63dd 50%,#061a3dcc 82%,transparent);border-radius:14px;box-shadow:0 0 18px #147cff44,inset 0 0 16px #0007;opacity:1}
+.prman-footer strong{display:block;font-size:21px;font-weight:1000;letter-spacing:.07em;line-height:1.15;text-shadow:none}
+.prman-footer .footer-star{font-style:normal;color:#ff243f;-webkit-text-stroke:1px #ffd34d;text-shadow:0 0 8px #ff244d,0 0 3px #ffd34d}
+.prman-footer .footer-word{display:inline;color:#ffd85a;font-size:inherit;font-weight:1000;letter-spacing:inherit;text-shadow:0 0 7px #ffb300}
+.prman-footer .footer-duel{display:inline;color:#62cfff;font-size:inherit;font-weight:1000;letter-spacing:inherit;text-shadow:0 0 7px #168cff}
+.prman-footer .footer-presented{display:block;margin:5px 0 1px;color:#d9ecff;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.prman-footer .footer-prman{display:block;margin:0;color:#63d7ff;font-size:15px;font-weight:1000;letter-spacing:.11em;text-shadow:0 0 7px #168cff}
+.prman-footer .footer-prman em{font-style:normal;color:#ffd34d;text-shadow:0 0 7px #ff9d00}
