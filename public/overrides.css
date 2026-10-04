@@ -110,3 +110,7 @@
 /* Small visual gap below primary logo on lobby and game screens */
 .brand-art{margin-bottom:30px!important}
 @media(max-width:820px){.brand-art{margin-bottom:26px!important}}
+
+/* Deliberate large separation between logo and page content */
+.brand-art{margin-bottom:120px!important}
+@media(max-width:820px){.brand-art{margin-bottom:90px!important}}
